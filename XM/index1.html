@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				max-width: 1000px;
+				overflow: hidden;
+				margin: 0 auto;
+			}
+			img{
+                width: 200px;
+                height: 250px;
+                display: block;
+				float: left;
+            }
+        </style>
+	</head>
+	<body>
+		<div id="box" >
+			<img v-for="i in 100" asrc="img/2.png" src="" alt="img1" />
+		</div>
+	</body>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		new Vue({
+			el: '#box',
+			data: {
+				v_h: document.documentElement.clientHeight,
+				r_h:'',
+				i_h: 250
+			},
+			methods: {
+				fn() {
+					this.r_h = document.documentElement.scrollTop;
+					var Img = document.querySelectorAll('img')
+					var s = this.v_h + this.r_h
+					for (let i = 0; i < Img.length; i++) {
+						let se = Img[i].offsetTop
+						if (se < s && se + this.i_h > this.r_h) {
+							let str = Img[i].getAttribute('asrc')
+							Img[i].setAttribute('src', str)
+						}
+					}
+				}
+			},
+			mounted() {
+				this.fn()
+				window.addEventListener('scroll', this.fn)
+			},
+		})
+	</script>
+</html>

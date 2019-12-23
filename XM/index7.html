@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="swiper/dist/css/swiper.min.css" />
+		<script src="swiper/dist/js/swiper.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			[v-cloak] {
+				display: none;
+			}
+			
+			.nb1 span {
+				display: inline-block;
+				text-align: center;
+				width: 30%;
+				line-height: 50px;
+			}
+			
+			.nbp:hover {
+				color: #FFFFFF;
+				background-color: rgb(163, 133, 98);
+				border-color: solid 1px rgb(25, 25, 25);
+			}
+			
+			.nbs:hover {
+				color: #000000;
+				background-color: #FFFFFF;
+				border-color: solid 1px #FFFFFF;
+			}
+			
+			.swiper-pagination .swiper-pagination-bullet {
+				width: 60px;
+				height: 10px;
+				background: black;
+				border-radius: 0;
+			}
+			.lee4btn .a:hover{
+				background: rgba(163,163,0);
+				cursor: pointer;
+			}
+			.nb4 {
+				width: 100%;
+				min-height: 650px;
+				background-image: url('https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvZjczYWQzZjc1NTM4ZmE0ZGYzZmU0ODViMmQ3MWViYWMuanBn.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: no-scroll;
+				background-position: center center;
+				position: relative;
+			}
+			
+			.nb5 {
+				width: 100%;
+				min-height: 650px;
+				background-image: url('https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmVjZDcwMjVlOTRkODQyOTE4MzI1Yzc0NjFkZTVmNzcuanBn.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: no-scroll;
+				background-position: center center;
+				position: relative;
+			}
+			
+			.op {
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.op>div {
+				float: left;
+				width: 50%;
+				text-align: center;
+			}
+			
+			.t-p {
+				height: ;
+				background-image: url('https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvNDE2YTU3NmJhZTdkODA3MzJkOGNkN2MwYzI2YWI2ZjcuanBn.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: scroll;
+				background-position: Array;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box" v-cloak="">
+			<heads>
+				<div style="overflow: hidden;width: 80%;margin: 20px auto;" slot="no1">
+					<div style="float: left;width: 40%;">
+						<span>首页 & HOME</span>
+						<span>商店 & SHOP</span>
+						<span>品牌 & BRAND</span>
+					</div>
+					<img src="https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvMWM1NTIwMTlhYTkzZGE1MTQwZWE4MTE2NTdhZTYxNjIucG5n.png" alt="" style="width:20% ;
+						height: 50px;float: left;display: block;" />
+					<div style="float: right;width: 40%;">
+						<span>售后 & SERVICE</span>
+						<span>博客 & BLOG</span>
+						<span>门店 & ADRESS</span>
+					</div>
+				</div>
+			</heads>
+			<banners :boxs='arr'>
+				<div style="width: 100%;overflow: hidden;" slot="no2">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" v-for="i in arr"><img :src="i" alt="" style="width: 100%;height: 100%;float: left;" /></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</banners>
+			
+			<titles>
+				<div slot="lee1" style="text-align:center;padding:50px 0 10px 0;">
+					<div style="text-align:center;display:inline-block;">
+						<img src="https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvODI4NzdhMDRjOTczOTNhY2FlNDU4ZmQ2YjM5MWExMTktNDZ4ODAucG5n.png" alt="">
+					</div>
+				</div>
+				<div slot="lee2" style="text-align:center;">
+					<span class="span1"></span>
+					<div style="display:inline-block;font-size:30px;color: #333333;">新品推荐</div>
+					<span class="span2"></span>
+				</div>
+				<div slot="lee3" style="text-align:center;padding:20px 320px;">
+					<div style="font-size:13px;color: rgb(136, 136, 136);display:inline-block;">
+						在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。起飞页是一款简单、便捷的工具，可以帮助您制作响应式网站。
+					</div>
+				</div>
+				<div slot="lee4" style="text-align:center;">
+					<div class="lee4btn">
+						<span class="a">查看更多</span>
+					</div>
+				</div>
+			</titles>
+			<px :boxt="arr1" :bop="index">
+				<div style="overflow: hidden;margin-bottom: 90px;" slot="no4">
+					<div v-for="(i,$index) in arr1" style="float: left;display: block;width: 20%;text-align: center;line-height: 30px;">
+						<img :src="$index==index?i.hou:i.qian" alt="" width="90%" height="160%" @mouseover="index=$index" @mouseleave="index=-1" id="imgs" />
+						<p>{{i.title}}</p>
+						<p>{{i.ice}}</p>
+					</div>
+				</div>
+				<div class="nb4" slot="no5">
+					<div style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.3);">
+						<div style="width: 50%;margin: 0 auto;text-align: center;color: #FFFFFF;">
+							<span style="width: 50px;height: 1px;background: #FFFFFF;position: relative;top: -15px;display: inline-block;"></span>
+							<span style="line-height: 90px;display: inline-block;font-size: 48px;color: rgb(204, 204, 204);margin: 0 10px;font-weight: normal;margin-top: 140px;" slot="no4">欧版商务</span>
+							<span style="width: 50px;height: 1px;background: #FFFFFF;position: relative;top: -15px;display: inline-block;"></span>
+							<p style="line-height: 30px;font-size: 14px;color: rgb(204, 204, 204)" slot="no5">在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。起飞页是一款简单、便捷的工具，可以帮助您制作响应式网站。在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。</p>
+							<p style="padding: 15px;border: solid 1px #FFFFFF;width: 30%;font-size: 16px;margin: 20px auto 30px;transition: all .5s;" class="nbs">查看商品</p>
+						</div>
+					</div>
+				</div>
+				<div class="op" slot="no6">
+					<div>
+						<img src="https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvODI4NzdhMDRjOTczOTNhY2FlNDU4ZmQ2YjM5MWExMTktNDZ4ODAucG5n.png" alt="" style="width: 46px;height: 80px;;margin-top: 40px;" />
+						<div style="margin: 0 auto;text-align: center;">
+							<span style="width: 50px;height: 1px;background: rgb(229, 212, 199);position: relative;top: -15px;display: inline-block;"></span>
+							<span style="line-height: 90px;display: inline-block;font-size: 48px;color: #333333;font-weight: normal;" slot="no6">冬季轻奢</span>
+							<span style="width: 50px;height: 1px;background: rgb(229, 212, 199);position: relative;top: -15px;display: inline-block;"></span>
+							<p style="line-height: 50px;font-size: 14px;color: #333333;width: 80%;margin: 0 auto;" slot="no7">在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。起飞页是一款简单、便捷的工具，可以帮助您制作响应式网站。</p>
+							<p style="padding: 15px;border: solid 1px rgb(229, 212, 199);width: 30%;font-size: 16px;margin: 40px auto 30px;transition: all .5s;" class="nbp">查看更多</p>
+						</div>
+					</div>
+					<div>
+						<img src="https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvYmRjNTQ5NDlhOWZlYzQzOTVkZWEwMWIwOTMxODNkZjAuanBn.jpg" alt="" style="width: 100%;height: 450px;" />
+					</div>
+					<div>
+						<img src="https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvMDdiZDUyOGQ1OTU4ZWIyNjhhNDdlYWZjZDJjZDIxZjMuanBn.jpg" alt="" style="width: 100%;height: 450px;" />
+					</div>
+					<div>
+						<img src="https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvODI4NzdhMDRjOTczOTNhY2FlNDU4ZmQ2YjM5MWExMTktNDZ4ODAucG5n.png" alt="" style="width: 46px;height: 80px;margin-top: 40px;" />
+						<div style="margin: 0 auto;text-align: center;">
+							<span style="width: 50px;height: 1px;background: rgb(229, 212, 199);position: relative;top: -15px;display: inline-block;"></span>
+							<span style="line-height: 90px;display: inline-block;font-size: 48px;color: #333333;font-weight: normal;" slot="no8">春夏潮流</span>
+							<span style="width: 50px;height: 1px;background: rgb(229, 212, 199);position: relative;top: -15px;display: inline-block;"></span>
+							<p style="line-height: 50px;font-size: 14px;color: #333333;width: 80%;margin: 0 auto;" slot="no9">在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。起飞页是一款简单、便捷的工具，可以帮助您制作响应式网站。</p>
+							<p style="padding: 15px;border: solid 1px rgb(229, 212, 199);width: 30%;font-size: 16px;margin: 40px auto 30px;transition: all .5s;" class="nbp">查看更多</p>
+						</div>
+					</div>
+				</div>
+				<div class="nb5" slot="no7">
+					<div style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.3);">
+						<div style="width: 50%;margin: 0 auto;text-align: center;color: #FFFFFF;">
+							<span style="width: 50px;height: 1px;background: #FFFFFF;position: relative;top: -15px;display: inline-block;"></span>
+							<span style="line-height: 90px;display: inline-block;font-size: 48px;color: rgb(204, 204, 204);margin: 0 10px;font-weight: normal;margin-top: 140px;" slot="no10">舒适休闲</span>
+							<span style="width: 50px;height: 1px;background: #FFFFFF;position: relative;top: -15px;display: inline-block;"></span>
+							<p style="line-height: 30px;font-size: 14px;color: rgb(204, 204, 204)" slot="no5">在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。起飞页是一款简单、便捷的工具，可以帮助您制作响应式网站。在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。</p>
+							<p style="padding: 15px;border: solid 1px #FFFFFF;width: 30%;font-size: 16px;margin: 20px auto 30px;transition: all .5s;" class="nbs">查看商品</p>
+						</div>
+					</div>
+				</div>
+				<div style="text-align: center;margin-top:30px;" slot="no8">
+						<img src="https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvODI4NzdhMDRjOTczOTNhY2FlNDU4ZmQ2YjM5MWExMTktNDZ4ODAucG5n.png" alt="" style="width: 46px;height: 80px;margin-top: 100px;opacity: 0.5;" />
+						<div style="width: 50%;margin: 0 auto;text-align: center;">
+							<span style="width: 50px;height: 1px;background: rgb(229, 212, 199);position: relative;top: -15px;display: inline-block;"></span>
+							<span style="line-height: 90px;display: inline-block;font-size: 48px;color: #333333;margin: 0 5px;font-weight: normal;">品牌博客</span>
+							<span style="width: 50px;height: 1px;background: rgb(229, 212, 199);position: relative;top: -15px;display: inline-block;"></span>
+						</div>
+					</div>
+			</px>
+		</div>
+		<!--头部-->
+		<template id="heads">
+			<div>
+				<div class="nb1">
+					<slot name="no1"></slot>
+				</div>
+			</div>
+		</template>
+		<!--轮播图-->
+		<template id="banners">
+			<div>
+				<slot name="no2"></slot>
+			</div>
+		</template>
+		<!--标题-->
+		<template id="titles">
+			<div>
+				<slot name="lee1"></slot>
+				<slot name="lee2"></slot>
+				<slot name="lee3"></slot>
+				<slot name="lee4"></slot>
+			</div>
+		</template>
+		<template id="px">
+			<div>
+				<slot name="no4"></slot>
+				<slot name="no5"></slot>
+				<slot name="no6"></slot>
+				<slot name="no7"></slot>
+				<slot name="no8"></slot>
+			</div>
+		</template>
+		<template id="content">
+			<div>
+				
+			</div>
+		</template>
+	</body>
+	
+</html>
+<script src="vue.js"></script>
+<script>
+	Vue.component('px', {
+		template: '#px',
+		props: ['boxt', 'bop'],
+		data() {
+			return {
+				arr: this.boxs,
+				index: this.bop
+			}
+		},
+	})
+	Vue.component('heads', {
+		template: '#heads'
+	})
+	Vue.component('banners', {
+		template: '#banners',
+		props: ['boxs'],
+		data() {
+			return {
+				arr: this.boxs
+			}
+		}
+	})
+	Vue.component('titles', {
+		template: '#titles',
+	})
+	new Vue({
+		el: '#box',
+		data: {
+			arr: ['https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvOTEzZjNmM2FjYmY1MGM2Y2U5Mjg1NDYzNTNiYjlkOGQuanBn.jpg', 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvOTAxNDJiZjZjMmUzOWVhMzhjM2NkNGVmNTM0NjIwN2QuanBn.jpg'],
+			arr1: [{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+				{
+					qian: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNDY2N2U0Y2IyNmFhNjExODMwNGE2YjYxNGVhZWE5YmYtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					hou: 'https://ccdn.goodq.top/caches/43d28b753c1e0702a349c5cc0c6b23ed/aHR0cHM6Ly81Y2U1MTFmZWJjMjE4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNmM0YjQ4MGRkZjZmMGUwNzZkMDhhYWE2MTNhY2Y5OTUtMzUweDI1Ni5qcGc_p_p100_p_3D.jpg',
+					title: '英伦商务男士皮鞋',
+					ice: '￥6900.00'
+				},
+			],
+			index: -1
+		}
+	})
+	var swiper = new Swiper('.swiper-container', {
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		loop: true,
+		autoplay: true,
+	})
+</script>

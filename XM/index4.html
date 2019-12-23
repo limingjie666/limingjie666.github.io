@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#box {
+				width: 1200px;
+				height: 440px;
+				margin: 0 auto;
+			}
+
+			[v-cloak] {
+				display: none;
+			}
+
+			.picshow {
+				width: 880px;
+				height: 100%;
+				float: left;
+				position: relative;
+			}
+
+			.select_btn {
+				width: 320px;
+				height: 100%;
+				float: right;
+				background: #f0f0f0;
+				color: #111;
+			}
+
+			.list {
+				width: 880px;
+				height: 90px;
+				box-sizing: border-box;
+				padding: 10px 30px;
+				position: absolute;
+				top: 350px;
+				overflow: hidden;
+				background-color: rgba(0, 0, 0, .5);
+				
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.uli {
+				padding: 9px 11px 9px 9px;
+				border-top: 1px #474747 solid;
+				border-left: 1px #474747 solid;
+				overflow: hidden;
+				transition: 0.4s;
+			}
+
+			.uli p {
+				text-decoration: underline;
+				color: #000;
+			}
+
+			.uli:nth-child(1) {
+				border-top: 0;
+			}
+
+			.uli:nth-child(1) p {
+				color: #F0F0F0;
+			}
+
+			.uli:hover {
+				background: #333;
+			}
+
+			.uli:hover p {
+				color: #F0F0F0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" v-cloak>
+			<ell>
+				<img slot="oImg" :src="oarr.img" alt="" style="width: 100%;height: 100%;">
+				<a slot="tit" href="#" style="color: #fff;">{{oarr.tit}}</a>
+				<span slot="p">{{oarr.p}}</span>
+				<lii v-for="(i,$index) in arr" slot="lis" @click.native="fu($index,i)">
+					<img slot="timg" :src="i.img">
+					<span slot="lt">{{i.tit}}</span>
+					<span slot="shi">{{i.time}}</span>
+				</lii>
+			</ell>
+		</div>
+
+
+		<template id="oll">
+			<div class="slider" style="height: 100%;">
+				<div class="picshow">
+					<div style="height: 100%;">
+						<slot name="oImg"></slot>
+					</div>
+					<div class="list" style="font-size: 12px;">
+						<h3 style="margin: 13px 0;">
+							<slot name="tit"></slot>
+						</h3>
+						<p style="color:#ccc;">
+							<slot name="p"></slot>
+						</p>
+					</div>
+				</div>
+				<div class="select_btn">
+					<slot name="lis"></slot>
+				</div>
+			</div>
+		</template>
+		<template id="eii">
+			<div class="uli">
+				<div style="width: 70px;height: 48.5px;float: left;margin-right: 10px;border: 1px #ccc solid;padding: 2px;">
+					<slot name="timg"></slot>
+				</div>
+				<a href="#">
+					<p style="font-size:16px;margin-bottom: 5px;">
+						<slot name="lt"></slot>
+					</p>
+				</a>
+				<a href="#">
+					<p style="font-size:12px;">
+						<slot name="shi"></slot>
+					</p>
+				</a>
+			</div>
+		</template>
+	</body>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		Vue.component('ell', {
+			template: '#oll',
+			props: []
+		})
+		Vue.component('lii', {
+			template: '#eii',
+			props: []
+		})
+		new Vue({
+			el: '#box',
+			data: {
+				arr: [{
+						img: 'img/a1.png',
+						tit: '垂直轮播插件标题信息内容1',
+						p: '上海第一家死飞精品店，由三个外国人与一中国人联合创办，主要经营客订个性单速车，帮助他们得到自己梦想中的车架。',
+						time: '2019/01/16'
+					},
+					{
+						img: 'img/a2.png',
+						tit: '垂直轮播插件标题信息内容2',
+						p: '上海第一家死飞精品店，由三个外国人与一中国人联合创办，主要经营客订个性单速车，帮助他们得到自己梦想中的车架。',
+						time: '2019/01/15'
+					},
+
+					{
+						img: 'img/a3.png',
+						tit: '垂直轮播插件标题信息内容3',
+						p: '上海第一家死飞精品店，由三个外国人与一中国人联合创办，主要经营客订个性单速车，帮助他们得到自己梦想中的车架。',
+						time: '2019/01/13'
+					},
+
+					{
+						img: 'img/a4.png',
+						tit: '垂直轮播插件标题信息内容4',
+						p: '上海第一家死飞精品店，由三个外国人与一中国人联合创办，主要经营客订个性单速车，帮助他们得到自己梦想中的车架。',
+						time: '2019/01/08'
+					},
+
+					{
+						img: 'img/a5.png',
+						tit: '垂直轮播插件标题信息内容5',
+						p: '上海第一家死飞精品店，由三个外国人与一中国人联合创办，主要经营客订个性单速车，帮助他们得到自己梦想中的车架。',
+						time: '2019/01/28'
+					},
+
+					{
+						img: 'img/a6.png',
+						tit: '垂直轮播插件标题信息内容6',
+						p: '上海第一家死飞精品店，由三个外国人与一中国人联合创办，主要经营客订个性单速车，帮助他们得到自己梦想中的车架。',
+						time: '2019/01/26'
+					}
+				],
+				oarr: {
+					img: 'img/a1.png',
+					tit: '垂直轮播插件标题信息内容1',
+					p: '上海第一家死飞精品店，由三个外国人与一中国人联合创办，主要经营客订个性单速车，帮助他们得到自己梦想中的车架。',
+				},
+				ins: 0,
+				times:null
+			},
+			methods: {
+				fu(a,b){
+					clearInterval(this.times)
+					this.fn(a,b)
+				},
+				fn(a, b) {
+					clearInterval(this.times)
+					this.ins = a
+					var lis = document.querySelectorAll('.uli')
+					let list=document.querySelector('.list')
+					list.style.height='0px'
+					for (let s = 0; s < lis.length; s++) {
+						list.style.transition='0s';
+						lis[s].style.background = '';
+						var spa = lis[s].querySelectorAll('p')
+						for (let e = 0; e < spa.length; e++) {
+							spa[e].style.color = "#000"
+						}
+					}
+					var sp = lis[a].querySelectorAll('p')
+					lis[a].style.background = '#000000';
+					for (let i = 0; i < sp.length; i++) {
+						sp[i].style.color = "#fff"
+					}
+					setTimeout(function(){
+						list.style.transition='0.5s';
+						list.style.height='90px'
+					},100)
+					this.oarr.img = b.img
+					this.oarr.tit = b.tit
+					this.oarr.p = b.p
+				}
+			},
+			mounted() {
+				this.fn(0,this.arr[0])
+				setInterval((data)=>{
+					this.ins++
+					if (this.ins>=6) {
+						this.ins=0
+					}
+					this.fn(this.ins,this.arr[this.ins])
+				},2000)
+			},
+		})
+	</script>
+</html>

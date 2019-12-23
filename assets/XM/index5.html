@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			[v-cloak] {
+				display: none;
+			}
+
+			#box1 {
+				width: 960px;
+				height: 321px;
+				padding: 15px;
+				margin: 0 auto;
+				position: relative;
+				border: 1px #ccc solid;
+			}
+
+			.ml0 {
+				width: 22.5%;
+				margin: 10px;
+				background: #f3f3f3;
+				border: 2px #F3F3F3 solid;
+			}
+
+			img {
+				max-width: 100%;
+				height: 200px;
+			}
+
+			p {
+				font-size: 12px;
+				line-height: 22px;
+				padding-left: 10px;
+				color: #666;
+			}
+
+			.ml0:hover {
+				border: 2px rgb(255, 120, 0) solid;
+			}
+
+			.ml0:hover .mt10 {
+				color: rgb(255, 120, 0);
+			}
+
+			.title {
+				height: 20px;
+				border-bottom: 3px solid #e7e7e7;
+				padding-bottom: 10px;
+				position: relative;
+				top: 6px;
+			}
+
+			.cf {
+				zoom: 1;
+			}
+
+			.title h2 {
+				font-size: 20px;
+				font-family: microsoft yahei;
+			}
+
+			.fl {
+				display: inline;
+				float: left;
+			}
+			.title-list li {
+				width: 146px;
+				line-height: 20px;
+				text-align: center;
+				float: left;
+				display: inline;
+			}
+
+			.fr {
+				display: inline;
+				float: right;
+			}
+
+			.title-list p {
+				position: absolute;
+				top: 30px;
+				width: 146px;
+				height: 7px;
+				border-top: 3px solid #f60;
+				overflow: hidden;
+				text-align: center;
+				display: block;
+				transition: .4s;
+			}
+
+			b {
+				border-right: 9px solid rgba(0, 0, 0, 0);
+				border-bottom: 9px solid rgba(0, 0, 0, 0);
+				border-left: 9px solid rgba(0, 0, 0, 0);
+				border-top: 9px solid #FF6600;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" v-cloak>
+			<div id="box1">
+				<div class="title cf">
+					<h2 class="fl">设计案例</h2>
+					<ul class="title-list fr cf ">
+						<li v-for="(i,$index) in arr" @mouseover="fn($index)" :style="$index==0?{color:'#f60',fontWeight:700}:{}" >{{i.tit}}</li>
+						<p :style="{left:left+'px'}"><b></b></p>
+					</ul>
+				</div>
+				<div id="cen" style="margin-top: 10px;width: 100%;transition: .4s;">
+					<ell v-for="i in 3" :ddd=arr[inde] ></ell>
+					<ell style="margin-right: 0;" :ddd=arr[inde] ></ell>
+				</div>
+
+			</div>
+		</div>
+		<template id="oll">
+			<div class="ml0" style="display: block;float: left;">
+				<div style="width: 100%;text-align: center;background: #fff;"><img :src="ddd.img"></div>
+				<p class="mt10">{{ddd.h}}</p>
+				<p class="pb10">{{ddd.p}}</p>
+			</div>
+		</template>
+	</body>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		Vue.component('ell', {
+			template: '#oll',
+			props: ['ddd'],
+			data() {
+				return {
+					json: this.ddd
+				}
+			}
+		})
+		new Vue({
+			el: '#box',
+			data: {
+				left: 220,
+				inde:0,
+				arr: [{
+					tit:'LOGO',
+					img: 'img/1.jpg',
+					h: 'jQuery插件库演示...',
+					p: '演示描述信息'
+				}, {
+					tit:'宣传单',
+					img: 'img/2.jpg',
+					h: 'jQuery插件库演示...',
+					p: '演示描述信息'
+				}, {
+					tit:'画册',
+					img: 'img/3.jpg',
+					h: 'jQuery插件库演示...',
+					p: '演示描述信息'
+				}, {
+					tit:'优惠券',
+					img: 'img/4.jpg',
+					h: 'jQuery插件库演示...',
+					p: '演示描述信息'
+				}, {
+					tit:'会员卡',
+					img: 'img/5.jpg',
+					h: 'jQuery插件库演示...',
+					p: '演示描述信息'
+				}]
+			},
+			methods: {
+				fn(a) {
+					this.left=220+(a*146);
+					var ull=document.querySelectorAll('.title-list')[0];
+					var lii=ull.querySelectorAll('li');
+					var cen=document.getElementById('cen')
+					for (let i=0;i<lii.length;i++) {
+						lii[i].style.color='#000';
+						lii[i].style.fontWeight='normal';
+					}
+					lii[a].style.color='#f60';
+					lii[a].style.fontWeight=700;
+					cen.style.display='none'
+					this.inde=a;
+					setTimeout(()=>{
+						cen.style.display='block'
+					},80)
+				}
+			}
+		})
+	</script>
+</html>

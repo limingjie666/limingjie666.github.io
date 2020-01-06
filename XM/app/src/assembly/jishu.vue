@@ -37,13 +37,11 @@
     },
     mounted(){
       this.key=this.json.h
-      if(JSON.stringify(this.g_json)=='{}'){
-        this.num=0
-      }else{
+      if(this.g_json.hasOwnProperty(this.key)){
         let jso=this.g_json[this.key]
-        
-        // this.num=jso.num
-        // console.log(jso)
+        this.num=jso.num
+      }else{
+        this.num=0
       }
     }
   }
